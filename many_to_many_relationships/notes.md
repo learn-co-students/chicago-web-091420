@@ -1,12 +1,9 @@
 # Intro to Object Oriented Programming in Ruby
 
 ## Objectives
-- implement one to many relationships
-    - one object has many objects
-    - one object belongs to an object
-- practice passing objects as arguments
-- define "single source of truth"
-- discus naming conventions (Class vs instance)
+- implement many to many relationships
+- discuss domain modeling
+
 ## Outline
 
 ```

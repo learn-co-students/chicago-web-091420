@@ -1,17 +1,17 @@
 class Tweet 
-    attr_reader :message, :user
+    attr_reader :message, :author
 
     @@all = []
 
-    def initialize(message, user)
+    def initialize(message, author)
         @message = message
-        @user = user
+        @author = author
 
         @@all << self
     end
 
     def username
-        @user.username
+        @author.username
     end
 
     def self.all

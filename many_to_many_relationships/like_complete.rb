@@ -1,11 +1,12 @@
 class Like
-    attr_accessor :user, :tweet
+    attr_accessor :liker, :tweet
 
     @@all = []
 
-    def initialize(user, tweet)
-        @user = user
+    def initialize(liker, tweet)
+        @liker = liker
         @tweet = tweet
+
         @@all << self
     end
 

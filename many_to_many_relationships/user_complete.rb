@@ -1,6 +1,6 @@
 class User
     attr_reader :username
-
+    
     def initialize(username)
         @username = username
     end
@@ -11,7 +11,7 @@ class User
 
     def tweets
         Tweet.all.select do |tweet|
-            tweet.user == self
+            tweet.author == self
         end
     end
 
@@ -21,7 +21,7 @@ class User
 
     def likes
         Like.all.select do |like|
-            like.user == self
+            like.liker == self
         end
     end
 
