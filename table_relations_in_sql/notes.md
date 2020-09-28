@@ -64,3 +64,6 @@ D - Destroy, delete records from a database
 ## Icebox
 
 ## Resources
+
+Tomorrow's Discussion: Domain Modeling
+Friday's Discussion: Object Relational Mapping
