@@ -160,7 +160,8 @@ and the view (now with a form!)
     <input type="submit" value="Create Book"
 </form>
 ```
-and now we need a create resource
+
+and now we need a create resource to catch the forms submit request
 
 ```ruby
 # application_controller
@@ -184,7 +185,7 @@ get 'books/:id/edit' do
 end
 ```
 
-and view, looks a lot like new
+and view, looks a lot like new but we can prepopulate the values so the user can see what the current data looks like
 
 ```ruby
 # edit.erb
@@ -208,11 +209,6 @@ and a patch resource
 ```ruby
   patch '/books/:id' do
         book = Book.find(params[:id])
-        # update_params = {
-        #     title: params[:title],
-        #     author: params[:author],
-        #     snippet: params[:snippet],
-        # }
 
         book.update(params)
 
@@ -225,6 +221,9 @@ uh oh, we don't seem to be hitting our patch resource! Actually http only allows
 
 we need to add a hidden input to tell sinatra we actually want to update
 
+- we use input type `hidden` because this element is not intended for the user, it's intended only for our server
+- sinatra expects an attribute with the key `_method` for overriding HTTP actions
+- the value `patch` tells sinatra the action we want to override with
 ```ruby
 # edit.erb
 
@@ -234,7 +233,7 @@ we need to add a hidden input to tell sinatra we actually want to update
 </form>
 ```
 
-and we need to configure our controller to expect this hack
+and we need to configure our controller to expect this hack by enabling `method_overrid` in our `application_controller`
 
 ```ruby
 # application_controller
