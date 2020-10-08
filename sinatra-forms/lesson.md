@@ -27,6 +27,7 @@ ApplicationController now serves as an intermediate class between Sinatra::Base 
 
 ## New methods or features
 
+- nested params => book[title]
 - params.delete("_method")
 - if save/update => redirect, else => erb new/edit
 - .destroy(params[:id])

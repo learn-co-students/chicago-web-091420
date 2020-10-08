@@ -12,11 +12,18 @@
 - when do my elements need an id?
   - they don't typically but some tests require them to find the relevant element
 - when do I write code in the controller vs the erb file
-    - descrete information for display goes in erb
-    - everything else should be in an rb file
+  - discrete information for display goes in erb
+  - everything else should be in an rb file
 
 - do I need HTML boilerplate for every erb file?
-    - no, we can use an erb "template"
+  - no, we can use an erb "template"
+
+- delete verb vs post
+  - delete, needs method override => more semantic
+  - post also works, not as clear
+
+- slug
+  - benefits users by creating more descriptive urls
 
 ## Deliverables
 
@@ -60,3 +67,4 @@ As a site visitor, I should be able to:
 
 # icebox
 - does includes reduce the number of active record queries?
+- slugs demo

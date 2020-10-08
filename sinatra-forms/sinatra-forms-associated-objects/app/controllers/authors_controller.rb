@@ -1,10 +1,15 @@
 class AuthorsController < ApplicationController
-    
     # index
     get "/authors" do
         @authors = Author.all
 
         erb :"authors/index"
+    end
+
+    # new 
+    get "/authors/new" do
+    
+        erb :"authors/new"
     end
 
     # show
@@ -13,24 +18,34 @@ class AuthorsController < ApplicationController
 
         erb :"authors/show"
     end
-    # new 
-
-    get "/authors/new" do
-        
-    
-        erb :"authors/new"
-    end
 
     # create
     post "/authors" do
-        
-    end
-    # edit
+        author = Author.create(params)
 
+        redirect "/authors/#{author.id}"
+    end
+
+    # edit
+    get "/authors/:id/edit" do |id|
+        @author = Author.find(params[:id])
+        # @author = Author.find(id)
+
+        erb :"authors/edit"
+    end
+    
     # update
+    patch "/authors/:id" do |id|
+        author = Author.find(id)
+        params.delete("_method")
+        
+        author.update(params)
+
+        redirect "/authors#{author.id}"
+    end
 
     # delete
-    delete "/authors/:id/delete" do |id|
+    delete "/authors/:id" do |id|
         Author.find(id).delete
        
        redirect "authors"
