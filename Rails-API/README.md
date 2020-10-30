@@ -26,5 +26,4 @@
               origins '*'
               resource '*', headers: :any, methods: :any
           end
-      end
-```
+      end ```
