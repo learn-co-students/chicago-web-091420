@@ -50,6 +50,7 @@ array.forEach(num => console.log("Number is:", num))
 // 2. Return a new array with cube of numbers from current array
 array.map(num => num*num*num)
 array.map(num => Math.pow(num,3))
+array.map(num => num**3)
 
 // 3. Return all the even numbers from the array
 array.filter(num => num % 2 === 0)
@@ -69,9 +70,9 @@ function highOrder(){
 }
 
 // Higher Order Function
-function higherOrder(callback) {
+function higherOrder() {
     console.log('From Inside of Higher Order');
-    callback();
+    logHello();
 }
   
 // Callback
@@ -80,7 +81,7 @@ function logHello() {
 }
 
 // Passing callback into higher-order function
-higherOrder(logHello)
+higherOrder()
 
 // Declarative versus imperative
 
