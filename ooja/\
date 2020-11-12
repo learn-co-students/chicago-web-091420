@@ -1,0 +1,26 @@
+
+
+
+
+
+
+class Car {
+  constructor(){
+    this.transmission = true
+    this.mileage = 0
+  }
+
+  readOdometer() {}
+  
+
+}
+
+
+
+
+
+
+const toyota = new Car()
+const honda = new Car()
+const chevrolet= new Car()
+
